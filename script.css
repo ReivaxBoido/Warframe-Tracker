@@ -1,0 +1,60 @@
+header > h1 {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    color: lightcyan;
+}
+
+body {
+    background-color: rgb(17, 17, 17);
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#mainAlert {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: lighter;
+}
+
+#alertTitle {
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+}
+
+/* #outputAlert {
+    display: flex;
+    justify-content: space-around;
+} */
+
+div.alerts {
+    min-width: 400px;
+    background-color: rgb(7, 0, 31);
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 8px;
+    border-color: rgb(16, 0, 70);
+    margin: 10px;
+}
+
+/* Title */
+div.alerts :nth-child(1) {
+    color: lightcyan;
+    font-weight: normal;
+}
+
+/* Rewards */
+div.alerts :nth-child(6) {
+    color: yellow;
+    font-weight: normal;
+}
+/* Credit color */
+div.alerts :last-child {
+    color: lightblue;
+}
