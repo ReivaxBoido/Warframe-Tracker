@@ -7,6 +7,8 @@ header > h1 {
 
 body {
     background-color: rgb(17, 17, 17);
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: lighter;
 }
 
 .flex {
@@ -15,21 +17,11 @@ body {
     justify-content: space-around;
 }
 
-#mainAlert {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: lighter;
-}
-
-#alertTitle {
+.Title {
     text-align: center;
-    color: white;
     font-weight: lighter;
+    color: white;
 }
-
-/* #outputAlert {
-    display: flex;
-    justify-content: space-around;
-} */
 
 div.alerts {
     min-width: 400px;
@@ -43,18 +35,43 @@ div.alerts {
     margin: 10px;
 }
 
-/* Title */
+#cetusCycle {
+    background-color: rgb(7, 31, 0);
+    border-color: rgb(26, 70, 0);
+}
+
+#cambionCycle {
+    background-color: rgb(31, 0, 9);
+    border-color: rgb(70, 0, 15);
+}
+
+#vallisCycle {
+    background-color: rgb(0, 69, 71);
+    border-color: rgb(0, 170, 170);
+}
+
+div.Cycle {
+    min-width: 400px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 8px;
+    margin: 10px;
+}
+
+/* Alert Title */
 div.alerts :nth-child(1) {
     color: lightcyan;
     font-weight: normal;
 }
 
-/* Rewards */
+/* Alert Rewards */
 div.alerts :nth-child(6) {
     color: yellow;
     font-weight: normal;
 }
-/* Credit color */
+/* Alert Credit color */
 div.alerts :last-child {
     color: lightblue;
 }

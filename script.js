@@ -39,4 +39,44 @@ function Platform(p) {
             document.getElementById('outputAlert').innerHTML = output;
             document.getElementById('alertTitle').innerHTML = `Alerts (${alertcount})`; //Change the title to display number of alerts
         })
+
+    document.getElementById('cycleTitle').innerHTML = 'Cycles';
+    document.getElementById('outputCycle').innerHTML = ''; //Clear preexisting output if any
+    fetch(`https://api.warframestat.us/${platform}/cetusCycle`)
+        .then(res => res.json())
+        .then((data) =>
+        {
+            let output =`
+            <div class="Cycle" id="cetusCycle">
+            <h3>Cetus Cycle</h3>
+            <p>Current Cycle: ${data.state}</p>
+            <p>${data.shortString}</p>
+            </div>`;
+            document.getElementById('outputCycle').innerHTML += output; //Use += instead of = as it will override other cycles
+        });
+    
+    fetch(`https://api.warframestat.us/${platform}/cambionCycle`)
+    .then(res => res.json())
+    .then((data) =>
+    {   
+        let output =`
+        <div class="Cycle" id="cambionCycle">
+        <h3>Cambion Drift Cycle</h3>
+        <p>Current Cycle: ${data.active}</p>
+        </div>`;
+        document.getElementById('outputCycle').innerHTML += output; //Use += instead of = as it will override other cycles
+    });
+
+    fetch(`https://api.warframestat.us/${platform}/vallisCycle`)
+    .then(res => res.json())
+    .then((data) =>
+    {
+        let output =`
+        <div class="Cycle" id="vallisCycle">
+        <h3>Orb Vallis Cycle</h3>
+        <p>Current Cycle: ${data.state}</p>
+        <p>${data.shortString}</p>
+        </div>`;
+        document.getElementById('outputCycle').innerHTML += output; //Use += instead of = as it will override other cycles
+    });
 }
