@@ -68,6 +68,8 @@ div.sorties {
     border-style: solid;
     border-width: 8px;
     margin: 10px;
+    background-color: rgb(20, 0, 56);
+    border-color: rgb(29, 0, 83);
 }
 
 /* Alert Title */
