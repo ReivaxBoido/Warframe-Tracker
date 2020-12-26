@@ -79,4 +79,24 @@ function Platform(p) {
         </div>`;
         document.getElementById('outputCycle').innerHTML += output; //Use += instead of = as it will override other cycles
     });
+
+    document.getElementById('sortieTitle').innerHTML = "Sorties";
+    fetch(`https://api.warframestat.us/${platform}/sortie`)
+    .then(res => res.json())
+    .then((data) =>
+    {
+        let output = `
+        <div class="sorties">
+        <h3>${data.faction} - ${data.boss}</h3>
+        <p>Ends in ${data.eta}</p>`;
+        data.variants.forEach(function(v) {
+            output +=`
+            <div class="sortieMission">
+            <h3>${v.node} | ${v.missionType}</h3>
+            <p>${v.modifierDescription}</p>
+            </div>`;
+        });
+        output += `</div>`;
+        document.getElementById('outputSortie').innerHTML = output;
+    });
 }

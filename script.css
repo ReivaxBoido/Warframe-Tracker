@@ -60,6 +60,16 @@ div.Cycle {
     margin: 10px;
 }
 
+div.sorties {
+    min-width: 400px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 8px;
+    margin: 10px;
+}
+
 /* Alert Title */
 div.alerts :nth-child(1) {
     color: lightcyan;
