@@ -1,7 +1,11 @@
 function Platform(p) {
     platform = p;
+    
+    for (var l of document.getElementsByClassName("selected")){
+        l.setAttribute("class", "s");
+    }
+    document.getElementById(`${p}`).setAttribute("class", "selected");
 
-    localStorage.removeItem("Platform");
     localStorage.setItem("Platform", p);
 
     fetch(`https://api.warframestat.us/${platform}/news`)
@@ -125,6 +129,60 @@ function Platform(p) {
     });
 }
 
-if (localStorage.getItem("Platform") != null) {
-    Platform(localStorage.getItem("Platform"));
+function ddnews() {
+    let o = document.getElementById("outputNews")
+    if (o.style.display == "none")
+    {
+        o.style.display = "flex";
+        localStorage.setItem("News", "flex");
+    } else {
+        o.style.display = "none";
+        localStorage.setItem("News", "none");
+    }
+}
+
+function ddalert() {
+    let o = document.getElementById("outputAlert")
+    if (o.style.display == "none")
+    {
+        o.style.display = "flex";
+        localStorage.setItem("Alert", "flex");
+    } else {
+        o.style.display = "none";
+        localStorage.setItem("Alert", "none");
+    }
+}
+
+function ddcycle() {
+    let o = document.getElementById("outputCycle")
+    if (o.style.display == "none")
+    {
+        o.style.display = "flex";
+        localStorage.setItem("Cycle", "flex");
+    } else {
+        o.style.display = "none";
+        localStorage.setItem("Cycle", "none");
+    }
+}
+
+function ddsortie() {
+    let o = document.getElementById("outputSortie")
+    if (o.style.display == "none")
+    {
+        o.style.display = "block";
+        localStorage.setItem("Sortie", "block");
+    } else {
+        o.style.display = "none";
+        localStorage.setItem("Sortie", "none");
+    }
+}
+
+let p = localStorage.getItem("Platform") //Runs when page refreshes or is opened (This is to remember users preferences and loads preferences the next time he/she opens the page)
+if (p != null) {
+    console.log(p);
+    Platform(p);
+    document.getElementById("outputNews").style.display = localStorage.getItem("News");
+    document.getElementById("outputAlert").style.display = localStorage.getItem("Alert");
+    document.getElementById("outputCycle").style.display = localStorage.getItem("Cycle");
+    document.getElementById("outputSortie").style.display = localStorage.getItem("Sortie");
 }

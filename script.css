@@ -50,6 +50,11 @@ a:active {
     color: white;
 }
 
+#platformButton > button.selected {
+    color: aquamarine;
+    border-color: aquamarine;
+}
+
 .Title {
     text-align: center;
     font-weight: lighter;

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="script.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;600&display=swap" rel="stylesheet"> 
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 </head>
 
 <header>
@@ -20,24 +20,25 @@
 
 <body>
     <div id="mainNews">
-        <h2 id="newsTitle" class="Title"></h2>
+        <h2 id="newsTitle" class="Title" onclick=ddnews()></h2>
         <div id="outputNews" class="flex"></div>
     </div>
 
     <div id="mainAlert">
-        <h2 id="alertTitle" class="Title"></h2>
+        <h2 id="alertTitle" class="Title" onclick=ddalert()></h2>
         <div id="outputAlert" class="flex"></div>
     </div>
 
     <div id="Cycles">
-        <h2 id="cycleTitle" class="Title"></h2>
+        <h2 id="cycleTitle" class="Title" onclick=ddcycle()></h2>
         <div id="outputCycle" class="flex"></div>
     </div>
 
     <div id="Sortie">
-        <h2 id="sortieTitle" class="Title"></h2>
+        <h2 id="sortieTitle" class="Title" onclick=ddsortie()></h2>
         <div id="outputSortie"></div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
