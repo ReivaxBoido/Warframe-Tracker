@@ -17,6 +17,26 @@ body {
     justify-content: space-around;
 }
 
+a:link {
+    text-decoration: none;
+    color: limegreen;
+}
+
+a:visited {
+    text-decoration: none;
+    color: green;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+a:active {
+    text-decoration: none;
+    color: limegreen;
+}
+
 .Title {
     text-align: center;
     font-weight: lighter;
@@ -33,6 +53,22 @@ div.alerts {
     border-width: 8px;
     border-color: rgb(16, 0, 70);
     margin: 10px;
+}
+
+div.news {
+    width: 400px;
+    background-color: rgb(7, 0, 31);
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 8px;
+    border-color: rgb(16, 0, 70);
+    margin: 10px;
+}
+
+div.news > img {
+    width: 100%;
 }
 
 #cetusCycle {

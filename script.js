@@ -1,5 +1,26 @@
 function Platform(p) {
     platform = p;
+
+    fetch(`https://api.warframestat.us/${platform}/news`)
+        .then(res => res.json())
+        .then((data) =>
+        {
+            let output = '';
+            let newscount = 0;
+            data.forEach(function(news){
+                newscount += 1; // Counts News
+                output += `
+                <div class="news">
+                <a href="${news.link}">${news.message}</a>
+                <p>${news.eta}</p>
+                <img src="${news.imageLink}" alt="${news.message}">
+                </div>`
+            })
+
+            document.getElementById('outputNews').innerHTML = output;
+            document.getElementById('newsTitle').innerHTML = `News (${newscount})`;
+        });
+
     fetch(`https://api.warframestat.us/${platform}/alerts`)
         .then(res => res.json())
         .then((data) => 
