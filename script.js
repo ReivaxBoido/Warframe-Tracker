@@ -2,7 +2,7 @@ function Platform(p) {
     platform = p;
     
     for (var l of document.getElementsByClassName("selected")){
-        l.setAttribute("class", "s");
+        l.setAttribute("class", "");
     }
     document.getElementById(`${p}`).setAttribute("class", "selected");
 
