@@ -37,6 +37,19 @@ a:active {
     color: limegreen;
 }
 
+#platformButton {
+    display: flex;
+    justify-content: space-around;
+}
+
+#platformButton > button{
+    font-family: 'Titillium Web', sans-serif;
+    height: 40px;
+    width: 100%;
+    background-color: rgb(15, 15, 15);
+    color: white;
+}
+
 .Title {
     text-align: center;
     font-weight: lighter;
