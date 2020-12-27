@@ -1,6 +1,9 @@
 function Platform(p) {
     platform = p;
 
+    localStorage.removeItem("Platform");
+    localStorage.setItem("Platform", p);
+
     fetch(`https://api.warframestat.us/${platform}/news`)
         .then(res => res.json())
         .then((data) =>
@@ -120,4 +123,8 @@ function Platform(p) {
         output += `</div>`;
         document.getElementById('outputSortie').innerHTML = output;
     });
+}
+
+if (localStorage.getItem("Platform") != null) {
+    Platform(localStorage.getItem("Platform"));
 }
