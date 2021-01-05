@@ -7,8 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;600&display=swap" rel="stylesheet"> 
 </head>
 
-<header>
+<header> <!-- Note to self, use &#9776; if zenurik is broken -->
+    <span style="font-size:30px;cursor:pointer;float:left;color:white;" onclick="openNav()"><img src="./Images/ZenurikClean.png" alt="Zenurik School" style="height:50px;width:50px;"></span>
+    <img src="./Images/LotusFlower.png" alt="Lotus Flower" style="float:right;width: 70px;height: 50px;" onclick="redirWarframe()">
+
     <h1>WARFRAME Tracker</h1>
+
     <div id="platformButton">
         <button onclick=Platform(id) id="pc">Pc</button>
         <button onclick=Platform(id) id="ps4">Ps4</button>
@@ -18,30 +22,39 @@
 </header>
 
 <body>
-    <div id="mainNews">
-        <h2 id="newsTitle" class="Title" onclick=ddnews()></h2>
-        <div id="outputNews" class="flex"></div>
+    <div id="main">
+
+        <div id="mainNews">
+            <h2 id="newsTitle" class="Title" onclick=ddnews()></h2>
+            <div id="outputNews" class="flex"></div>
+        </div>
+
+        <div id="mainAlert">
+            <h2 id="alertTitle" class="Title" onclick=ddalert()></h2>
+            <div id="outputAlert" class="flex"></div>
+        </div>
+
+        <div id="Cycles">
+            <h2 id="cycleTitle" class="Title" onclick=ddcycle()></h2>
+            <div id="outputCycle" class="flex"></div>
+        </div>
+
+        <div id="Sortie">
+            <h2 id="sortieTitle" class="Title" onclick=ddsortie()></h2>
+            <div id="outputSortie"></div>
+        </div>
+
+        <div id="Fissures">
+            <h2 id="fissureTitle" class="Title" onclick=ddfissures()></h2>
+            <div id="outputFissures" class="flex"></div>
+        </div>
     </div>
 
-    <div id="mainAlert">
-        <h2 id="alertTitle" class="Title" onclick=ddalert()></h2>
-        <div id="outputAlert" class="flex"></div>
+    <div id="mainsidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a>Change Background</a>
     </div>
 
-    <div id="Cycles">
-        <h2 id="cycleTitle" class="Title" onclick=ddcycle()></h2>
-        <div id="outputCycle" class="flex"></div>
-    </div>
-
-    <div id="Sortie">
-        <h2 id="sortieTitle" class="Title" onclick=ddsortie()></h2>
-        <div id="outputSortie"></div>
-    </div>
-
-    <div id="Fissures">
-        <h2 id="fissureTitle" class="Title" onclick=ddfissures()></h2>
-        <div id="outputFissures"></div>
-    </div>
     <script src="script.js"></script>
 </body>
 

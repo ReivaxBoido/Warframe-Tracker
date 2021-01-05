@@ -136,12 +136,13 @@ function Platform(p) {
         let output = "";
         data.forEach(function(fissure){
             output += `
-            <div class="fissures">
+            <div class="fissures ${fissure.tier}">
             <h3>${fissure.tier} Fissure</h3>
             <p>${fissure.node}</p>
             <p>${fissure.enemy} ${fissure.missionType}</p>
             <p>${fissure.eta} left</p>
-            </div>`
+            </div>
+            `
         });
         document.getElementById('outputFissures').innerHTML = output;
     });
@@ -199,8 +200,8 @@ function ddfissures() {
     let o = document.getElementById("outputFissures")
     if (o.style.display == "none")
     {
-        o.style.display = "block";
-        localStorage.setItem("Fissures", "block");
+        o.style.display = "flex";
+        localStorage.setItem("Fissures", "flex");
     } else {
         o.style.display = "none";
         localStorage.setItem("Fissures", "none");
@@ -216,4 +217,18 @@ if (p != null) {
     document.getElementById("outputCycle").style.display = localStorage.getItem("Cycle");
     document.getElementById("outputSortie").style.display = localStorage.getItem("Sortie");
     document.getElementById("outputFissures").style.display = localStorage.getItem("Fissures");
+}
+
+function openNav() {
+    document.getElementById("mainsidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mainsidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+} 
+
+function redirWarframe() {
+    location.href = "https://Warframe.com";
 }
