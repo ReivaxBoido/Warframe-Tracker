@@ -8,7 +8,7 @@ function Platform(p) {
 
     localStorage.setItem("Platform", p);
 
-    fetch(`https://api.warframestat.us/${platform}/news`)
+    fetch(`https://api.warframestat.us/${platform}/news`) // Fetch news
         .then(res => res.json())
         .then((data) =>
         {
@@ -28,7 +28,7 @@ function Platform(p) {
             document.getElementById('newsTitle').innerHTML = `News (${newscount})`;
         });
 
-    fetch(`https://api.warframestat.us/${platform}/alerts`)
+    fetch(`https://api.warframestat.us/${platform}/alerts`) // Fetch Alerts
         .then(res => res.json())
         .then((data) => 
         {
@@ -70,7 +70,7 @@ function Platform(p) {
 
     document.getElementById('cycleTitle').innerHTML = 'Cycles';
     document.getElementById('outputCycle').innerHTML = ''; //Clear preexisting output if any
-    fetch(`https://api.warframestat.us/${platform}/cetusCycle`)
+    fetch(`https://api.warframestat.us/${platform}/cetusCycle`) // Fetch Cycle(s)
         .then(res => res.json())
         .then((data) =>
         {
@@ -83,7 +83,7 @@ function Platform(p) {
             document.getElementById('outputCycle').innerHTML += output; //Use += instead of = as it will override other cycles
         });
     
-    fetch(`https://api.warframestat.us/${platform}/cambionCycle`)
+    fetch(`https://api.warframestat.us/${platform}/cambionCycle`) // Fetch Cycle(s)
     .then(res => res.json())
     .then((data) =>
     {   
@@ -95,7 +95,7 @@ function Platform(p) {
         document.getElementById('outputCycle').innerHTML += output; //Use += instead of = as it will override other cycles
     });
 
-    fetch(`https://api.warframestat.us/${platform}/vallisCycle`)
+    fetch(`https://api.warframestat.us/${platform}/vallisCycle`) // Fetch Cycle(s)
     .then(res => res.json())
     .then((data) =>
     {
@@ -109,7 +109,7 @@ function Platform(p) {
     });
 
     document.getElementById('sortieTitle').innerHTML = "Sorties";
-    fetch(`https://api.warframestat.us/${platform}/sortie`)
+    fetch(`https://api.warframestat.us/${platform}/sortie`) // Fetch Sortie
     .then(res => res.json())
     .then((data) =>
     {
@@ -126,6 +126,24 @@ function Platform(p) {
         });
         output += `</div>`;
         document.getElementById('outputSortie').innerHTML = output;
+    });
+
+    document.getElementById('fissureTitle').innerHTML = "Fissures";
+    fetch(`https://api.warframestat.us/${platform}/fissures`) // Fetch Fissures
+    .then(res => res.json())
+    .then((data) =>
+    {
+        let output = "";
+        data.forEach(function(fissure){
+            output += `
+            <div class="fissures">
+            <h3>${fissure.tier} Fissure</h3>
+            <p>${fissure.node}</p>
+            <p>${fissure.enemy} ${fissure.missionType}</p>
+            <p>${fissure.eta} left</p>
+            </div>`
+        });
+        document.getElementById('outputFissures').innerHTML = output;
     });
 }
 
@@ -177,6 +195,18 @@ function ddsortie() {
     }
 }
 
+function ddfissures() {
+    let o = document.getElementById("outputFissures")
+    if (o.style.display == "none")
+    {
+        o.style.display = "block";
+        localStorage.setItem("Fissures", "block");
+    } else {
+        o.style.display = "none";
+        localStorage.setItem("Fissures", "none");
+    }
+}
+
 let p = localStorage.getItem("Platform") //Runs when page refreshes or is opened (This is to remember users preferences and loads preferences the next time he/she opens the page)
 if (p != null) {
     console.log(p);
@@ -185,4 +215,5 @@ if (p != null) {
     document.getElementById("outputAlert").style.display = localStorage.getItem("Alert");
     document.getElementById("outputCycle").style.display = localStorage.getItem("Cycle");
     document.getElementById("outputSortie").style.display = localStorage.getItem("Sortie");
+    document.getElementById("outputFissures").style.display = localStorage.getItem("Fissures");
 }
