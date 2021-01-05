@@ -217,6 +217,7 @@ if (p != null) {
     document.getElementById("outputCycle").style.display = localStorage.getItem("Cycle");
     document.getElementById("outputSortie").style.display = localStorage.getItem("Sortie");
     document.getElementById("outputFissures").style.display = localStorage.getItem("Fissures");
+    document.body.style.backgroundImage = `url("./BackgroundImages/${localStorage.getItem("BG")}.jpg")`;
 }
 
 function openNav() {
@@ -231,4 +232,14 @@ function closeNav() {
 
 function redirWarframe() {
     location.href = "https://Warframe.com";
+}
+
+let bgrotation = 0;
+function backgroundchange() {
+    bgrotation += 1;
+    localStorage.setItem("BG", `${bgrotation}`);
+    document.body.style.backgroundImage = `url("./BackgroundImages/${bgrotation}.jpg")`;
+    if (bgrotation === 7) {
+        bgrotation = 0;
+    }
 }
