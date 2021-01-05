@@ -1,12 +1,12 @@
-function Platform(p) {
+function Platform(p) {  // Runs when a platform is selected or the page is run with user's preferences
     platform = p;
     
-    for (var l of document.getElementsByClassName("selected")){
+    for (var l of document.getElementsByClassName("selected")){ // Removes the color from previous platform
         l.setAttribute("class", "");
     }
-    document.getElementById(`${p}`).setAttribute("class", "selected");
+    document.getElementById(`${p}`).setAttribute("class", "selected");  // Change color of platform to selected platform
 
-    localStorage.setItem("Platform", p);
+    localStorage.setItem("Platform", p);    // Store user's platform preference
 
     fetch(`https://api.warframestat.us/${platform}/news`) // Fetch news
         .then(res => res.json())
@@ -148,7 +148,7 @@ function Platform(p) {
     });
 }
 
-function ddnews() {
+function ddnews() { // Open / Close News
     let o = document.getElementById("outputNews")
     if (o.style.display == "none")
     {
@@ -160,7 +160,7 @@ function ddnews() {
     }
 }
 
-function ddalert() {
+function ddalert() {    // Open / Close Alert
     let o = document.getElementById("outputAlert")
     if (o.style.display == "none")
     {
@@ -172,7 +172,7 @@ function ddalert() {
     }
 }
 
-function ddcycle() {
+function ddcycle() {    // Open / Close Cycle
     let o = document.getElementById("outputCycle")
     if (o.style.display == "none")
     {
@@ -184,7 +184,7 @@ function ddcycle() {
     }
 }
 
-function ddsortie() {
+function ddsortie() {   // Open / Close Sortie
     let o = document.getElementById("outputSortie")
     if (o.style.display == "none")
     {
@@ -196,7 +196,7 @@ function ddsortie() {
     }
 }
 
-function ddfissures() {
+function ddfissures() { // Open / Close Fissure 
     let o = document.getElementById("outputFissures")
     if (o.style.display == "none")
     {
@@ -230,11 +230,11 @@ function closeNav() {
     document.getElementById("main").style.marginLeft = "0";
 } 
 
-function redirWarframe() {
+function redirWarframe() {  // Warframe logo redirects to official website
     location.href = "https://Warframe.com";
 }
 
-let bgrotation = 0;
+let bgrotation = 0; // Cycle Through Folder BackgroundImages and saves the image number for the user when he/she opens website again
 function backgroundchange() {
     bgrotation += 1;
     localStorage.setItem("BG", `${bgrotation}`);
@@ -242,4 +242,15 @@ function backgroundchange() {
     if (bgrotation === 7) {
         bgrotation = 0;
     }
+}
+
+/* User has to double click in case he/she didn't want to reset preference */
+let clearconfirm = false;
+function clearstorage() {
+    document.getElementById("clear").innerHTML = "Confirm";
+    if (clearconfirm == true) {
+        localStorage.clear();
+        location.reload();
+    }
+    clearconfirm = true;
 }

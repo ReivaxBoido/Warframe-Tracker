@@ -12,13 +12,6 @@
     <img src="./Images/LotusFlower.png" alt="Lotus Flower" style="float:right;width: 70px;height: 50px;" onclick="redirWarframe()">
 
     <h1>WARFRAME Tracker</h1>
-
-    <div id="platformButton">
-        <button onclick=Platform(id) id="pc">Pc</button>
-        <button onclick=Platform(id) id="ps4">Ps4</button>
-        <button onclick=Platform(id) id="xb1">Xbox</button>
-        <button onclick=Platform(id) id="swi">Switch</button>
-    </div>
 </header>
 
 <body>
@@ -50,9 +43,17 @@
         </div>
     </div>
 
-    <div id="mainsidenav" class="sidenav">
+    <div id="mainsidenav" class="sidenav"> <!-- Sidebar Navigation -->
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a onclick="backgroundchange()">Change Background</a>
+        <br>
+        <a>Platform</a>
+        <a onclick="Platform(id)" id="pc">PC</a>
+        <a onclick="Platform(id)" id="ps4">PS4</a>
+        <a onclick="Platform(id)" id="xb1">Xbox</a>
+        <a onclick="Platform(id)" id="swi">Switch</a>
+        <br>
+        <a onclick="clearstorage()" id="clear">Clear Preference</a>
     </div>
 
     <script src="script.js"></script>
