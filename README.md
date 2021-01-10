@@ -18,6 +18,9 @@ Tracks the 3 Cycles in Warframe (Cetus, Orb Vallis, Cambion Drift) and show when
 ### Sorties
 Track daily sorties and display the missions required and special modifier.
 
+## Side Menu
+Open by Clicking the Zenurik Symbol on the top left of the website.
+
 ### Fissures
 Track current fissures showing the mission and when the fissure ends.
 
