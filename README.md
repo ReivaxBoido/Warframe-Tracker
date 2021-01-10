@@ -4,6 +4,12 @@ https://reivaxboido.github.io/Warframe-Tracker/
 ## Design Process
 This website was made for Warframe Players who want the convenience of checking Warframe events without logging onto the game.
 
+Users can also use this website to check the cycles and other event missions while in a mission as normally they are only able to check it in the orbiter.
+
+You are able to customize what sort of information you want to see from this website. If you don't want to see the news and only want to see the missions and cycles, you can hide the news by cliking the header and everytime you visit the website, the news will not show until you either click the news header to make it reappear or clear your preferences.
+
+The font used in this website is made similar to the font in Warframe to make players feel comfortable and the background changing allows users to change the background to their favourite Warframe and allow them to identify that the Website is for Warframe.
+
 ## Features
 
 ### News
