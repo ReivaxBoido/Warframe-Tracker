@@ -37,12 +37,16 @@ n/a
 ## Credits
 ### Content
 The tracker was made possible by using the Warframe Community Dev API
+
 *https://docs.warframestat.us/*
+
 Font from Google Fonts
+
 *https://fonts.google.com/specimen/Titillium+Web?query=tit&sidebar.open=true&selection.family=Titillium+Web:wght@200;300;600&preview.text_type=custom&preview.text=WARFRAME*
 
 ### Media
 Background Images were taken from
+
 *https://www.warframe.com/news/warframe-fansite-kit*
 
 ## Acknowledgement
