@@ -1,4 +1,5 @@
 function Platform(p) {  // Runs when a platform is selected or the page is run with user's preferences
+    document.getElementById("prompt").innerHTML = "";
     platform = p;
     
     for (var l of document.getElementsByClassName("selected")){ // Removes the color from previous platform
