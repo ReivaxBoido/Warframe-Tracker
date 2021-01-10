@@ -40,9 +40,6 @@ Warframe have different missions and news based on different platform, you can c
 Clicking on the header in the website will hide the respective feature.
 The website remembers your platform, background preference and which feature you hid.
 
-## Libraries
-n/a
-
 ## Credits
 ### Content
 The tracker was made possible by using the Warframe Community Dev API
