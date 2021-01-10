@@ -218,7 +218,10 @@ if (p != null) {
     document.getElementById("outputCycle").style.display = localStorage.getItem("Cycle");
     document.getElementById("outputSortie").style.display = localStorage.getItem("Sortie");
     document.getElementById("outputFissures").style.display = localStorage.getItem("Fissures");
-    document.body.style.backgroundImage = `url("./BackgroundImages/${localStorage.getItem("BG")}.jpg")`;
+}
+let b = localStorage.getItem("BG")
+if (b != null) {
+    document.body.style.backgroundImage = `url("./BackgroundImages/${b}.jpg")`;
 }
 
 function openNav() {
