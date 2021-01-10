@@ -21,6 +21,7 @@ body {
     background-color: rgb(65, 65, 65);
     background-image: url("./BackgroundImages/3.jpg");
     background-attachment: fixed;
+    background-size: cover;
     font-family: 'Titillium Web', sans-serif;
     font-weight: lighter;
 }
